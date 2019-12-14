@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+#content-area {
+    background-color: #b6d5f8;
+    margin: 0 auto;
+    max-width: 100%;
+
+}
+
+#header_style{
+    font-size: 1.25em;
+    color: white;
+    text-shadow: -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+nav {
+    justify-content: space-between;
+    align-items: center;
+    background-color: #515151;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+p {
+    color: #E64A19;
+}
+
+body {
+    width: 800px;
+    margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 200px;
+}

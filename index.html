@@ -2,78 +2,34 @@
 <html>
 
 <head>
-    <!-- <% include ../partials/header.ejs %> -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <meta charset="utf-8">
     <title>Weather</title>
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/css/css.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
-
-    <!-- <img src="/public/css/openWeatherMap.png"> -->
-
-
     <div id="content-area">
         <nav>
             <ul id="header_style">
-                <li><a href="weather_ajax" class="logo"> Weather Application-AJAX</a></li>
-                <li><a href="currentWeather" id="currentWeather"> Your Weather's location </a></li>
-                <li><a href="https://github.com/coelho2210/finalProject_nodejs" id="github" target="_blank">Github</a>
-                </li>
-                <% include ../partials/nav.ejs %>
-                <!-- <li><a href="/login" id="login"> Login </a></li> -->
-                <!-- <li><a href="/logout" id="signup"> Logout </a></li> -->
-            </ul>
+                <li>My Weather App</li></ul>
         </nav>
 
         <div class="container">
             <fieldset>
-                <!-- <form action="/" method="post"> -->
-                <!-- <input name="city" type="text" class="input" placeholder="Enter a City" required><br> <br> -->
                 <input id="city" placeholder="Enter a City"></input><br><br>
                 <button id="getWeatherForcast">Click here!</button>
-                <!-- </form> -->
-
                 <div class="ShowWeatherForcast"></div>
             </fieldset>
         </div>
     </div>
 
+    <script src="js/javascript.js"></script>
 
     <script type="text/javascript">
-        $(document).ready(function () {
 
-            $("#getWeatherForcast").click(function () {
-
-                var city = $("#city").val();
-                var key = '4de3768c62b67fe359758977a3efc069';
-
-                $.ajax({
-                    url: 'http://api.openweathermap.org/data/2.5/weather',
-                    dataType: 'json',
-                    type: 'GET',
-                    data: { q: city, appid: key, units: 'imperial' },
-
-                    success: function (data) {
-                        var wf = '';
-                        $.each(data.weather, function (index, val) {
-
-                            wf += '<p>It is ' + data.main.temp + '&deg;F ' +
-                                ' in ' + data.name + "</p>"
-
-                        });
-
-                        $(".ShowWeatherForcast").html(wf);
-                    }
-
-                })
-
-            });
-        });
     </script>
 
 </body>
